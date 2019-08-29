@@ -4,7 +4,7 @@ using namespace std;
 // function prototypes
 void display();
 void insert(int x);
-void search(int x);
+bool search(int x);
 
 struct Node {
 	int data;
@@ -61,19 +61,18 @@ void insert(int x) {
 	}
 }
 
-void search(int x) {
+bool search(int x) {
 	Node *p;	// temporary pointer
 	p = head;
-	bool found = false;
 
 	while (p != NULL) {	// while the current node is not null
-		if (p->data == x)	// if the node data is equal to search key x
-			found = true;	// set found to true
+		if (p->data == x) {		
+			cout << "The value " << x << " was found in the list.\n";
+			return true;	// if the node data is equal to search key x, return true
+		}
 		p = p->next;			
 	}
 
-	if (found == true)
-		cout << "The value " << x << " was found in the list.\n";
-	else
-		cout << "The value " << x << " was not found in the list.\n";
+	cout << "The value " << x << " was not found in the list.\n";
+	return false;			// else return false
 }
