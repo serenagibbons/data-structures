@@ -12,6 +12,10 @@ int main() {
 	search(4);
 	search(2);
 	search(3);
+	display();
+	remove(4);
+	remove(3);
+	display();
 	remove(2);
 	display();
 	   	 

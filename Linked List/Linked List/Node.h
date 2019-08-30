@@ -8,6 +8,6 @@ using namespace std;
 void display();
 void insert(int x);
 bool search(int x);
-bool remove(int x);
+void remove(int x);
 
 #endif NODE_H

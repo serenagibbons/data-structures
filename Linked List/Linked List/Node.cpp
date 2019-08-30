@@ -56,29 +56,30 @@ bool search(int x) {
 	return false;			// else return false
 }
 
-bool remove(int x) {
+void remove(int x) {
 	Node *p;	// temporary pointer
 	Node *t = NULL;	// trailing pointer
 	p = head;
 
 	if (p == NULL) {
-		cout << "The list is empty.\n";
-		return false;
+		cout << "Remove failed: The list is empty.\n";
 	}
 	else if (search(x) == false ) {
-		cout << "The list does not contain " << x << endl;
-		return false;
+		cout << "Remove failed: The list does not contain " << x << endl;
 	}
 	else {
 		while (p != NULL) {	// while the current node is not null
-	
 			if (p->data == x) {		
-				t->data = (p->next)->data;
-				t->next = p->next;
+				cout << "Removing value " << x << endl;
+				if (p->next != NULL) {	// if p is the not the tail
+					t->next = p->next;
+				}
+				else {	// if p is the tail
+					t->next = NULL;
+				}
 			}
 			t = p;
 			p = p->next;
 		}
-		return true;
 	}
 }
