@@ -55,3 +55,30 @@ bool search(int x) {
 	cout << "The value " << x << " was not found in the list.\n";
 	return false;			// else return false
 }
+
+bool remove(int x) {
+	Node *p;	// temporary pointer
+	Node *t = NULL;	// trailing pointer
+	p = head;
+
+	if (p == NULL) {
+		cout << "The list is empty.\n";
+		return false;
+	}
+	else if (search(x) == false ) {
+		cout << "The list does not contain " << x << endl;
+		return false;
+	}
+	else {
+		while (p != NULL) {	// while the current node is not null
+	
+			if (p->data == x) {		
+				t->data = (p->next)->data;
+				t->next = p->next;
+			}
+			t = p;
+			p = p->next;
+		}
+		return true;
+	}
+}

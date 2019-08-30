@@ -12,6 +12,8 @@ int main() {
 	search(4);
 	search(2);
 	search(3);
+	remove(2);
+	display();
 	   	 
 	system("pause");
 	return 0;
