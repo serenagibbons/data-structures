@@ -13,10 +13,12 @@ int main() {
 	search(2);
 	search(3);
 	display();
-	remove(4);
-	remove(3);
+	remove(5);
 	display();
 	remove(2);
+	remove(4);
+	display();
+	remove(3);
 	display();
 	   	 
 	system("pause");

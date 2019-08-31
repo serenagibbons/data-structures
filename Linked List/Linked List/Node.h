@@ -1,5 +1,5 @@
-#ifndef NODE_H
-#define NODE_H
+#ifndef Node_H
+#define Node_H
 
 #include <iostream>
 using namespace std;
@@ -10,4 +10,4 @@ void insert(int x);
 bool search(int x);
 void remove(int x);
 
-#endif NODE_H
+#endif Node_H
