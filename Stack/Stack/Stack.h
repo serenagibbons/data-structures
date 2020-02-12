@@ -19,5 +19,4 @@ public:
 	void pop();
 	T peek();
 };
-
 #endif // !STACK_H

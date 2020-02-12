@@ -1,4 +1,6 @@
 #include <iostream>
+#include <new>
+#include <string>
 #include "Stack.h"
 
 template <class T> Stack<T>::Stack()
@@ -25,9 +27,9 @@ template <class T> Stack<T>::~Stack() {
 	delete[] arrayStack;
 }
 
-template <class T> void Stack<T>::push(T) {
+template <class T> void Stack<T>::push(T item) {
 	if (isFull()) {
-		T *temp;
+		T *tempStack;
 		int newCapacity = capacity * 2;
 		try {
 			// allocate more memory
@@ -50,7 +52,7 @@ template <class T> void Stack<T>::push(T) {
 		capacity = newCapacity;
 	}
 	// insert new item and incremenet size
-	arrayStack[size++] = T;
+	arrayStack[size++] = item;
 }
 
 template <class T> void Stack<T>::pop() {
@@ -66,5 +68,5 @@ template <class T> T Stack<T>::peek() {
 		exit(EXIT_FAILURE);
 	}
 	// return top of the stack
-	return arrayStack[size];
+	return arrayStack[size-1];
 }
