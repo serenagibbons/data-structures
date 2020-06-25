@@ -1,6 +1,7 @@
 #include <iostream>
 #include "binarySearch.h"
 
+// iterative binary search
 int binarySearch(int arr[], const int SIZE, int target) {
 	int l = 0;
 	int r = SIZE - 1;
@@ -37,9 +38,11 @@ int binarySearch(int arr[], int l, int r, int target) {
 	if (arr[m] == target) { return m; }
 
 	if (arr[m] > target) {
+		// call binary search on first half
 		binarySearch(arr, l, m - 1, target);
 	}
 	else {
+		// call binary search on second half
 		binarySearch(arr, m + 1, r, target);
 	}
 }
